@@ -7,12 +7,7 @@ buildGoModule {
   pname = "yarnfetch";
   version = "0-unstable-2026-06-29";
 
-  src = fetchFromGitHub {
-    owner = "yaaaarn";
-    repo = "yarnfetch";
-    rev = "57ea3bd22e103a1b3f74bf16683dbfb3f7cf6ead";
-    hash = "sha256-NaksvcnnogbW9DMynrM3SshwLZFMC1DHYqJ0xG1Lf38=";
-  };
+  src = ./.;
 
   vendorHash = "sha256-WZTMj4x4BNAMS3PFEkvPHE1md6sLO1IWvK0yvG9drCM=";
 
