@@ -5,7 +5,7 @@
 }:
 buildGoModule {
   pname = "yarnfetch";
-  version = "0-unstable-2026-06-29";
+  version = "0-unstable";
 
   src = ./.;
 
