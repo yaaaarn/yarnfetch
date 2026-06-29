@@ -16,10 +16,7 @@ buildGoModule {
 
   vendorHash = "sha256-WZTMj4x4BNAMS3PFEkvPHE1md6sLO1IWvK0yvG9drCM=";
 
-  postInstall = ''
-    mkdir -p $out/bin
-    mv ./yarnfetch $out/bin/yarnfetch
-  '';
+  subPackages = [ "." ];
 
   meta = with lib; {
     description = "A simple info utility";
