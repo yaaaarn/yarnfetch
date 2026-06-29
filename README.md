@@ -28,7 +28,6 @@ add to your flake.nix inputs:
 yarnfetch = {
   url = "github:yaaaarn/yarnfetch";
   inputs.nixpkgs.follows = "nixpkgs";
-
 };
 ```
 
