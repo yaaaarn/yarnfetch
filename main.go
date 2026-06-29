@@ -115,15 +115,9 @@ func get(item FetchItem) string {
 		}
 	case WM:
 		if runtime.GOOS == "darwin" {
-			if termProg, ok := os.LookupEnv("TERM_PROGRAM"); ok {
-				value = termProg
-			} else if _, err := exec.LookPath("QuartzGUI"); err == nil {
-				value = "Quartz"
-			} else {
-				out, err := exec.Command("pgrep", "-x", "WindowServer").Output()
-				if err == nil && len(out) > 0 {
-					value = "Quartz/Aqua"
-				}
+			out, err := exec.Command("defaults", "read", "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/Info.plist", "CFBundleShortVersionString").Output()
+			if err == nil {
+				value = "Quartz Compositor " + strings.TrimSpace(string(out))
 			}
 		} else {
 			variables := [3]string{
@@ -229,14 +223,11 @@ func main() {
 		infoLines = append(infoLines, formattedLine)
 	}
 
-	maxTotalLines := len(asciiLines)
-	if len(infoLines) > maxTotalLines {
-		maxTotalLines = len(infoLines)
-	}
+	maxTotalLines := max(len(asciiLines), len(infoLines))	
 
 	gap := "   "
 
-	for i := 0; i < maxTotalLines; i++ {
+	for i := range maxTotalLines {
 		asciiPart := ""
 		infoPart := ""
 
