@@ -177,8 +177,6 @@ type listItem struct {
 }
 
 func main() {
-	fmt.Println()
-
 	items := []listItem{
 		{key: "os", value: get(OS), color: color.FgBlue},
 		{key: "host", value: get(Host), color: color.FgCyan},
@@ -227,6 +225,8 @@ func main() {
 
 	gap := "   "
 
+	fmt.Println()
+	
 	for i := range maxTotalLines {
 		asciiPart := ""
 		infoPart := ""
