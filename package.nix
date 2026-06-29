@@ -14,7 +14,12 @@ buildGoModule {
     hash = "sha256-NaksvcnnogbW9DMynrM3SshwLZFMC1DHYqJ0xG1Lf38=";
   };
 
-  vendorHash = lib.fakeHash; # Nix will calculate the Go dependency hash
+  vendorHash = "sha256-WZTMj4x4BNAMS3PFEkvPHE1md6sLO1IWvK0yvG9drCM=";
+
+  postInstall = ''
+    mkdir -p $out/bin
+    mv ./yarnfetch $out/bin/yarnfetch
+  '';
 
   meta = with lib; {
     description = "A simple info utility";
