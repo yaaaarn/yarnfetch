@@ -188,8 +188,8 @@ func main() {
 	}
 
 	bgColors := []([]color.Attribute){
-		{color.BgBlack, color.BgRed, color.BgGreen, color.BgBlue, color.BgMagenta, color.BgCyan, color.BgWhite},
-		{color.BgHiBlack, color.BgHiRed, color.BgHiGreen, color.BgHiBlue, color.BgHiMagenta, color.BgHiCyan, color.BgHiWhite},
+		{color.BgBlack, color.BgRed, color.BgGreen, color.BgYellow, color.BgBlue, color.BgMagenta, color.BgCyan, color.BgWhite},
+		{color.BgHiBlack, color.BgHiRed, color.BgHiGreen, color.BgHiYellow, color.BgHiBlue, color.BgHiMagenta, color.BgHiCyan, color.BgHiWhite},
 	}
 
 	maxKeyLength := len(slices.MaxFunc(items, func(a listItem, b listItem) int {
