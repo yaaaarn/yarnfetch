@@ -1,11 +1,10 @@
 {
   lib,
   buildGoModule,
-  fetchFromGitHub,
 }:
 buildGoModule {
   pname = "yarnfetch";
-  version = "0-unstable";
+  version = "unstable";
 
   src = ./.;
 
